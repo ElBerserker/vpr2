@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Latitud y Longitud</title>
+</head>
+<body>
+    <h1>Registrar ciudad</h1>
+    <form method="POST" action="/registrar_ciudad">
+		  <label for="ciudad">Ciudad:</label>
+        <input type="text" name="ciudad" required><br><br>
+        <label for="latitud">Latitud:</label>
+        <input type="text" name="latitud" required><br><br>
+        <label for="longitud">Longitud:</label>
+        <input type="text" name="longitud" required><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+	 <br/><br/>
+	 <h1>Registrar pedido</h1>
+	 <form method="POST" action="/registrar_pedido">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" name="ciudad" required><br><br>
+        <label for="numero">Numero:</label>
+        <input type="text" name="numero" required><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+	 <br/><br/>
+    <h1>Registrar almacen</h1>
+    <form method="POST" action="/registrar_almacen">
+        <label for="latitud">Latitud:</label>
+        <input type="text" name="latitud" required><br><br>
+        <label for="longitud">Lonitud:</label>
+        <input type="text" name="longitud" required><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <br/><br/>
+    <h1>Maximo de carga</h1>
+    <form method="POST" action="/configurar_maxima_carga">
+        <label for="max_carga">Carga maxima:</label>
+        <input type="text" name="max_carga" required><br><br>
+        <input type="submit" value="Enviar">	 
+    </form>		
+	 <br/><br/>
+	 <form method="GET" action="/calcular_ruta">             
+        <input type="submit" value="Calcular Ruta">
+    </form>
+
+    {% if error_msg %}
+    <p style="color: red;">{{ error_msg }}</p>
+    {% endif %}
+</body>
+</html>
+
